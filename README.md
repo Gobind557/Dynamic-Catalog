@@ -37,21 +37,26 @@ app/
   not-found.tsx
   page.tsx
 components/
-  CatalogShell.tsx
-  CatalogSkeleton.tsx
-  CategorySection.tsx
-  Container.tsx
-  DetailSkeleton.tsx
-  DynamicProps.tsx
-  EmptyState.tsx
-  FilterBar.tsx
-  ItemCard.tsx
-data/
-  catalog.json
+  catalog/
+    CatalogShell.tsx
+    CategorySection.tsx
+    DynamicProps.tsx
+    FilterBar.tsx
+    ItemCard.tsx
+  ui/
+    Container.tsx
+    EmptyState.tsx
+    Skeleton.tsx
 lib/
-  data.ts
-  groupByCategory.ts
-  types.ts
+  data/
+    catalog.json
+    data.ts
+  services/
+    catalog.service.ts
+  types/
+    catalog.types.ts
+  utils/
+    groupByCategory.ts
 store/
   catalog-store.ts
 styles/

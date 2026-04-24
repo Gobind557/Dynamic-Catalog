@@ -1,8 +1,8 @@
-import { CatalogShell } from "@/components/CatalogShell";
-import { getItems } from "@/lib/data";
+import { CatalogShell } from "@/components/catalog/CatalogShell";
+import { getItems } from "@/lib/services/catalog.service";
 
-export default function Home() {
-  const items = getItems();
+export default async function Home() {
+  const items = await getItems();
 
   return <CatalogShell items={items} />;
 }

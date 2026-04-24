@@ -1,4 +1,7 @@
-import type { CatalogItem, GroupedCatalogItems } from "@/lib/types";
+import type {
+  CatalogItem,
+  GroupedCatalogItems,
+} from "@/lib/types/catalog.types";
 
 export function groupByCategory(items: CatalogItem[]): GroupedCatalogItems {
   return items.reduce<GroupedCatalogItems>((groups, item) => {
