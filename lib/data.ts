@@ -1,7 +1,27 @@
 import catalogItems from "@/data/catalog.json";
 import type { CatalogItem } from "@/lib/types";
 
-const items = catalogItems as CatalogItem[];
+type CatalogItemRecord = Omit<CatalogItem, "id"> & {
+  id?: string;
+};
+
+function slugify(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+const items = (catalogItems as CatalogItemRecord[]).map((item, index) => ({
+  ...item,
+  id:
+    item.id ??
+    [item.category, item.itemname, String(index + 1)]
+      .map(slugify)
+      .filter(Boolean)
+      .join("-"),
+}));
 
 export function getItems(): CatalogItem[] {
   return items;
